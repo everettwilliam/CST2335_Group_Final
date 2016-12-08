@@ -17,7 +17,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="102dp"
-        android:id="@+id/btnLaunchAutomobile" />
+        android:id="@+id/btnLaunchAutomobile"
+        style="@style/Widget.AppCompat.Button"
+        android:backgroundTint="@color/colorPrimaryAuto" />
 
     <Button
         android:text="House Activity"
@@ -26,7 +28,8 @@
         android:layout_marginTop="15dp"
         android:id="@+id/btnLaunchHouse"
         android:layout_below="@+id/btnLaunchAutomobile"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:backgroundTint="@color/colorPrimaryAuto" />
 
     <Button
         android:text="Living Room Activity"
@@ -35,7 +38,8 @@
         android:layout_marginTop="23dp"
         android:id="@+id/btnLaunchLivingRoom"
         android:layout_below="@+id/btnLaunchHouse"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:backgroundTint="@color/colorPrimaryAuto" />
 
 
 </RelativeLayout>
