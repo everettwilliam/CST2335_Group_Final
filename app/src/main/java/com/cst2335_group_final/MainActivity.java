@@ -30,11 +30,20 @@ public class MainActivity extends AppCompatActivity {
 
         btnLaunchAutomobile = (Button)findViewById(R.id.btnLaunchAutomobile);
         btnLaunchLivingRoom = (Button)findViewById(R.id.btnLaunchLivingRoom);
+        btnLaunchHouse = (Button)findViewById(R.id.btnLaunchHouse);
         btnLaunchAutomobile.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AutoMenuListActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnLaunchHouse.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), HouseSettings.class);
                 startActivity(intent);
             }
         });
@@ -50,5 +59,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Button btnLaunchAutomobile;
+    Button btnLaunchHouse;
     Button btnLaunchLivingRoom;
 }
