@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.cst2335_group_final"
     android:versionCode="@string/version_number">
 
@@ -10,12 +12,35 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+=======
+    package="com.cst2335_group_final">
+<!--Living Room Permissions-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.TRANSMIT_IR"
+        android:required="false" />
+
+    <uses-feature android:name="android.hardware.consumerir" />
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="25" /> <!-- Minimum SDK Version is 17 -->
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+>>>>>>> refs/remotes/origin/kim_app
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/HouseTheme">
 
         <!-- HOUSE SETTINGS -->
@@ -35,6 +60,66 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
+=======
+        android:theme="@style/AppTheme">
+        <!--Splash Activities-->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <!--Automobile Activities-->
+        <activity android:name=".AutoMenuListActivity"
+            android:theme="@style/AutoTheme">
+        </activity>
+        <activity
+            android:name=".MenuOptionDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="stuff"
+            android:parentActivityName=".AutoMenuListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cst2335_group_final.AutoMenuListActivity" />
+        </activity>
+        <!--Living Room Activities-->
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/app_name"
+            android:theme="@style/DarkToolbarTheme">
+        </activity>
+        <activity
+            android:name=".RemoconMainActivity"
+            android:label="@string/title_menu_4"
+            android:theme="@style/DarkToolbarTheme"
+            android:parentActivityName=".StartActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartActivity" />
+        </activity>
+        <activity
+            android:name=".RemoconAddList"
+            android:label="@string/title_menu_4_add"
+            android:parentActivityName=".RemoconMainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="anrdroid.support.PARENT_ACTIVITY"
+                android:value=".RemoconMainActivity" />
+        </activity>
+        <activity
+            android:name=".RemoconDetailActivity"
+            android:label="@string/title_menu_4"
+            android:parentActivityName=".RemoconMainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="anrdroid.support.PARENT_ACTIVITY"
+                android:value=".RemoconMainActivity" />
+        </activity>
+>>>>>>> refs/remotes/origin/kim_app
     </application>
-
 </manifest>
