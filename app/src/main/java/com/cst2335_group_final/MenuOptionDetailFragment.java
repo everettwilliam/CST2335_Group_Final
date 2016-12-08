@@ -95,6 +95,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                     Snackbar.make(container, "Temperature Settings", Snackbar.LENGTH_SHORT).show();
                     return view;
                 case "Fuel Level":
+                    //inflates the layout for the fuel level
                     view = inflater.inflate(R.layout.option_fuel, container, false);
                     //open fuel settings
                     settings = getActivity().getSharedPreferences(MenuOptionDetailActivity.SETTINGS_FUEL, Context.MODE_PRIVATE);
@@ -102,14 +103,17 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                     btnRefuel.setOnClickListener(this);//add event handler
                     fuelBar = (ProgressBar) view.findViewById(R.id.barFuelLevel);//instantiate fuel gauge
                     fuelBar.setProgress(2 * settings.getInt("fuel_level", 0));//set fuel level from data in settings
-                    textRange = (TextView) view.findViewById(R.id.textRange);//instantiate
-                    textFuel.setText(String.valueOf(settings.getInt("fuel_level", 0)));
-                    textRange.setText(String.valueOf(calculateRange(settings.getInt("fuel_level", 0))));
-                    return view;
+                    textRange = (TextView) view.findViewById(R.id.textRange);//instantiate textView for displaying the range
+                    textFuel.setText(String.valueOf(settings.getInt("fuel_level", 0)));//set fuel level, retrieve value from settings
+                    textRange.setText(String.valueOf(calculateRange(settings.getInt("fuel_level", 0))));//set range, retrieves value from settings
+                    return view;//returns the inflated view
                 case "Light":
+                    //inflates the layout for the light settings
                     view = inflater.inflate(R.layout.option_lights, container, false);
+                    //open light settings
                     settings = getActivity().getSharedPreferences(MenuOptionDetailActivity.SETTINGS_LIGHTS, Context.MODE_PRIVATE);
                     editor = settings.edit();
+                    //sets the button image for on or off
                     btnFog = (ImageButton) view.findViewById(R.id.btn_fog);
                     if (settings.getInt("btn_fog", 0) == 1) {
                         btnFog.setImageResource(R.drawable.fog_light_on);
@@ -118,6 +122,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                         btnFog.setImageResource(R.drawable.fog_light);
                         editor.putInt("btn_fog", 0).commit();
                     }
+                    //sets the button image for on or off
                     btnHighBeam = (ImageButton) view.findViewById(R.id.btn_high_beam);
                     if (settings.getInt("btn_high_beam", 0) == 1) {
                         editor.putInt("btn_high_beam", 1).commit();
@@ -126,6 +131,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                         editor.putInt("btn_high_beam", 0).commit();
                         btnHighBeam.setImageResource(R.drawable.high_beam);
                     }
+                    //sets the button image for on or off
                     btnLowBeam = (ImageButton) view.findViewById(R.id.btn_low_beam);
                     if (settings.getInt("btn_low_beam", 0) == 1) {
                         editor.putInt("btn_low_beam", 1).commit();
@@ -134,8 +140,8 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                         editor.putInt("btn_low_beam", 0).commit();
                         btnLowBeam.setImageResource(R.drawable.low_beam);
                     }
+                    //sets the button image for on or off
                     btnLamp = (ImageButton) view.findViewById(R.id.btn_lamp);
-
                     if (settings.getInt("btn_lamp", 0) == 1) {
                         editor.putInt("btn_lamp", 1).commit();
                         btnLamp.setImageResource(R.drawable.dome_light_on);
@@ -145,6 +151,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                     }
                     fabFuelLight = (FloatingActionButton) view.findViewById(R.id.fab_fuel_light);
                     fabBootLight = (FloatingActionButton) view.findViewById(R.id.fab_boot_light);
+                    //add event handlers for the buttons in this view
                     btnFog.setOnClickListener(this);
                     btnHighBeam.setOnClickListener(this);
                     btnLowBeam.setOnClickListener(this);
@@ -152,7 +159,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                     fabFuelLight.setOnClickListener(this);
                     fabBootLight.setOnClickListener(this);
                     Snackbar.make(container, "Light Controls", Snackbar.LENGTH_SHORT).show();
-                    return view;
+                    return view;//returns the inflated view
                 case "Radio":
                     Snackbar.make(container, "Radio", Snackbar.LENGTH_SHORT).show();
                     break;
@@ -198,11 +205,11 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
         return null;
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
+    /**
+     * Implementaion of the click handler for the Fragment
+     * handles event for all buttons in each selection option view
+     * @param view the instance of the currently inflated view
+     *************************************************************/
     @Override
     public void onClick(View view) {
 
@@ -276,18 +283,29 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
         }
     }
 
+    /**
+     * Method for starting the engine, displays a custom dialog
+     * for inputing trip distance. Sets the color of the button:
+     * green for engine on and red for engine off
+     *************************************************************/
     private void startEngine() {
+        //opens start settings
         settings = getActivity().getSharedPreferences(MenuOptionDetailActivity.SETTINGS_START, Context.MODE_PRIVATE);
         btnStart.setImageResource(R.drawable.start_green);
         textStart.setText(R.string.engine_stop);
         textRunning.setText(R.string.engine_running);
         editor = settings.edit();
-        editor.putInt("engine_started", 1).commit();
+        editor.putInt("engine_started", 1).commit();//saves state of engine in settings
         Toast.makeText(getContext(), "engine started", Toast.LENGTH_SHORT).show();
+        //creates and displays the custom dialog box
         CustomDialog dialog = new CustomDialog();
         dialog.show(getFragmentManager(), "Drive");
     }
 
+    /**
+     * Method for stoping the engine. Sets the color of the button:
+     * green for engine on and red for engine off
+     *************************************************************/
     private void stopEngine() {
         btnStart.setImageResource(R.drawable.start_red);
         textStart.setText(R.string.engine_start);
@@ -298,6 +316,9 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
         Toast.makeText(getContext(), "engine stopped", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Method for calculating the range based on the remaining fuel level
+     *************************************************************/
     private int calculateRange(int fuel) {
         float fuelEconomy = 0.096f;
         int range = (int) (fuel / fuelEconomy);
@@ -307,6 +328,10 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
         return range;
     }
 
+    /**
+     * AsyncTask for updating the fuel gauge and the fuel level display
+     * and range.
+     *************************************************************/
     protected class Fuel extends AsyncTask<Integer, Integer, Integer> {
 
         @Override
@@ -333,11 +358,15 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
             editor.putInt("range", range).commit();
         }
     }
-
-    protected static final String ACTIVITY_NAME = "DetailFragment";
+    /*stores the option selected in the main ListView*/
     public static final String ITEM_ID = "item_id";
+    /*stores the name of the current activity for debugging*/
+    protected static final String ACTIVITY_NAME = "DetailFragment";
+    /*an instance of SharedPreferences*/
     protected SharedPreferences settings;
+    /*an instance of the SharedPreferences editor*/
     protected SharedPreferences.Editor editor;
+    /*the fuel economy of the automobile*/
     private final float fuelEconomy = 0.096f;
     private String item;
     private ImageButton btnStart;
