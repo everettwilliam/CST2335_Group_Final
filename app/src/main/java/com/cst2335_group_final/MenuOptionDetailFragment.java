@@ -104,6 +104,7 @@ public class MenuOptionDetailFragment extends Fragment implements View.OnClickLi
                     fuelBar = (ProgressBar) view.findViewById(R.id.barFuelLevel);//instantiate fuel gauge
                     fuelBar.setProgress(2 * settings.getInt("fuel_level", 0));//set fuel level from data in settings
                     textRange = (TextView) view.findViewById(R.id.textRange);//instantiate textView for displaying the range
+                    textFuel = (TextView) view.findViewById(R.id.textFuelLevel);//instantiate textView for displaying the range
                     textFuel.setText(String.valueOf(settings.getInt("fuel_level", 0)));//set fuel level, retrieve value from settings
                     textRange.setText(String.valueOf(calculateRange(settings.getInt("fuel_level", 0))));//set range, retrieves value from settings
                     return view;//returns the inflated view

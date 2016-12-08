@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnLaunchAutomobile = (Button)findViewById(R.id.btnLaunchAutomobile);
+        btnLaunchLivingRoom = (Button)findViewById(R.id.btnLaunchLivingRoom);
         btnLaunchAutomobile.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -37,8 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnLaunchLivingRoom.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
     Button btnLaunchAutomobile;
+    Button btnLaunchLivingRoom;
 }
