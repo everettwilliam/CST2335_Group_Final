@@ -20,12 +20,22 @@
         android:id="@+id/btnLaunchAutomobile" />
 
     <Button
-        android:text="Living Room Activity"
+        android:text="House Activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:id="@+id/btnLaunchLivingRoom"
+        android:id="@+id/btnLaunchHouse"
         android:layout_below="@+id/btnLaunchAutomobile"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Living Room Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/btnLaunchLivingRoom"
+        android:layout_below="@+id/btnLaunchHouse"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

@@ -1,7 +1,7 @@
 <resources>
-<<<<<<< HEAD
+
     <!-- HOUSE SETTINGS -->
-    <string name="app_name">House Settings</string>
+    <string name="house_name">House Settings</string>
     <string name="action_help">Help</string>
     <string name="title_activity_house_settings_content">HouseSettingsContent</string>
 
@@ -69,7 +69,7 @@
     <string name="delete_temp_schedule">Delete</string>
     <string name="edit_schedule_title">Edit Schedule</string>
     <string name="delete_schedule_title">Delete Schedule Item</string>
-=======
+
     <string name="app_name">CST2335_Group_Final</string>
 <!--Automobile Activity-->
     <string name="engine_start">Engine Start</string>
@@ -175,6 +175,4 @@
     <string name="menu_view_text">MENU</string>
     <string name="flash_on">Camera flash ON!</string>
     <string name="flash_off">Camera flash OFF!</string>
-
->>>>>>> refs/remotes/origin/kim_app
 </resources>
