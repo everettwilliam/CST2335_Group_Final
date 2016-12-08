@@ -1,3 +1,178 @@
 <resources>
+
+    <!-- HOUSE SETTINGS -->
+    <string name="house_name">House Settings</string>
+    <string name="action_help">Help</string>
+    <string name="title_activity_house_settings_content">HouseSettingsContent</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_house_settings_container">HouseSettingsContainer</string>
+    <string name="garage_door_heading">Garage Door</string>
+    <string name="garage_heading">Garage</string>
+    <string name="garage_door_closed">Open Garage</string>
+    <string name="garage_door_open">Close Garage</string>
+    <string name="garage_light_heading">Garage Light</string>
+    <string name="garage_light_off">Turn On</string>
+    <string name="garage_light_on">Turn Off</string>
+    <string name="house_settings_activity_name">House Settings</string>
+    <string name="title_garage_fragment">Garage</string>
+    <string name="house_temp_schedule_heading">Schedule</string>
+    <string name="house_temp_heading">Temperature</string>
+    <string name="title_house_temp_fragment">House Temperature</string>
+    <string name="house_temp_degrees">&#176; Celsius</string>
+    <string name="title_weather_fragment">Weather</string>
+    <string name="edit_temp_schedule">Edit</string>
+    <string name="weather_current_temp">Current: </string>
+    <string name="weather_min_temp">Min: </string>
+    <string name="weather_max_temp">Max: </string>
+    <string name="dialog_message">Add to Schedule</string>
+    <string name="dialog_title">Edt Schedule</string>
+    <string name="dialog_name_text">Name:</string>
+    <string name="dialog_temp_text">Temperature:</string>
+    <string name="dialog_time_text">Time:</string>
+    <string name="help_dialog_title_house_settings">House Settings</string>
+    <string name="help_dialog_message_house_settings">
+        &lt;p&gt;
+            Author: Victoria Sawyer
+            &lt;br&gt;
+            Version: %1$s
+        &lt;/p&gt;
+        &lt;p&gt;
+            Select Garage, House Temperature or Weather. Detailed instructions for each in their respective menus.
+        &lt;/p&gt;
+    </string>
+    <string name="help_dialog_message_garage">
+        &lt;p&gt;
+            Press \'Open Garage\' to open the garage and turn on the light for 5 seconds. A toast will appear.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Press \'Turn On\' to turn the light on. A snackbar will appear. If possible the device\'s light will turn on.
+        &lt;/p&gt;
+    </string>
+    <string name="help_dialog_message_house_temp">
+        &lt;p&gt;
+            Use the number picker to change the house temperature.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Press \'Edit\' to add items to the temperature schedule.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Press \'Delete\' to remove items from the temperature schedule by name.
+        &lt;/p&gt;
+    </string>
+    <string name="help_dialog_message_weather">
+        &lt;p&gt;
+            This fragment displays the weather for Ottawa.
+        &lt;/p&gt;
+    </string>
+    <string name="version_number">1.0</string>
+    <string name="delete_temp_schedule">Delete</string>
+    <string name="edit_schedule_title">Edit Schedule</string>
+    <string name="delete_schedule_title">Delete Schedule Item</string>
+
     <string name="app_name">CST2335_Group_Final</string>
+<!--Automobile Activity-->
+    <string name="engine_start">Engine Start</string>
+    <string name="engine_stop">Engine Stop</string>
+    <string name="engine_running">Engine Running</string>
+    <string name="oil">Change Oil!</string>
+    <string name="toolbar_dialog_ok">Drive</string>
+    <string name="toolbar_dialog_cancel">Cancel</string>
+    <string name="toolbar_dialog_message">Enter your estimated milage</string>
+    <string name="alert_message">There is not enough fuel to travel the estimated distance</string>
+    <string name="alert_title">Not enough gas!</string>
+    <string name="ok">Ok</string>
+
+    <!--House Activity-->
+
+    <!--Kitchen Activity-->
+
+    <!--LivingRoom Activity-->
+    <string name="databaseVersion" format="integer">1</string>
+    <string name="menu_1">House Setting</string>
+    <string name="menu_2">Kitchen</string>
+    <string name="menu_3">Automobile</string>
+    <string name="menu_4">Living Room</string>
+    <string name="menu_about">About</string>
+    <string name="menu_cancel">Cancel</string>
+    <string name="title_menu_1">House Setting</string>
+    <string name="title_menu_2">Kitchen</string>
+    <string name="title_menu_3">Automobile</string>
+    <string name="title_menu_4">Living Room</string>
+    <string name="title_about">About</string>
+    <string name="title_help">Help</string>
+    <string name="author_menu_1">Victoria Sawyer</string>
+    <string name="author_menu_2">Patrick Griffith</string>
+    <string name="author_menu_3">Everett Holden</string>
+    <string name="author_menu_4">Byung Seon Kim</string>
+    <string name="email_menu_1">sawy0025@algonquinlive.com</string>
+    <string name="email_menu_2">grif0182@algonquinlive.com</string>
+    <string name="email_menu_3">hold0052@algonquinlive.com</string>
+    <string name="email_menu_4">kim00331@algonquinlive.com</string>
+    <string name="title_menu_4_add">Add Remocon</string>
+    <string name="about_messtage">The app is for the final project of CST2335 in 2016 Fall. \n\nThe co-authors of the app are Byung Seon Kim, Everett Holden, Patrick Griffith and Victoria Sawyer.</string>
+    <string name="help_4">Author: Byung Seon Kim\n\nVersion: 1.0\n\nAdd List: Touch +\nDelete List: Long Touch on List\nUse: just Touch on List\n\nEnjoy!</string>
+    <string name="positive_button">OK</string>
+    <string name="thank_message">Thank you for using me.</string>
+    <string name="message_ask_back_button_again">Please click BACK again to exit.</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="next_button">Next (Manufacturer)</string>
+    <string name="remocon_icon">Show what kind of remote control it is</string>
+    <string name="city_name">City Name</string>
+    <string name="title_activity_weather_add_city">WeatherAddCity</string>
+    <string name="search_hint">Enter City Name</string>
+    <string name="title_confirm">Confirm</string>
+    <string name="message_nomore">One list has to exist at least.</string>
+    <string name="message_delete_confirm">Do you want to delete?</string>
+    <string name="loading">OpenWeatherMap data Loading...</string>
+    <string name="precipitation">Precipitation:</string>
+    <string name="humidity">humidity:</string>
+    <string name="weather_icon">Show icon of weather</string>
+    <string name="celsius">\u00B0C</string>
+    <string name="dot">.</string>
+    <string name="low_temperatre">Low: </string>
+    <string name="high_temperatre">High: </string>
+    <string name="img_desc">Weather Icon</string>
+    <string name="title_bone_list">Bones</string>
+    <string name="title_bone_detail">Bone Detail</string>
+    <string name="add_remocon">Add Remote Controller</string>
+    <string name="installed_place_hint">Installed Place</string>
+    <string name="item_1">Lamp (Simulation)</string>
+    <string name="item_2">Television (Sansung Only)</string>
+    <string name="item_3">Projector (Panasonic Only)</string>
+    <string name="capital_on">ON</string>
+    <string name="capital_off">OFF</string>
+    <string name="flash">Flash ON/OFF Switch </string>
+    <string name="dimmer_text">Dimmer</string>
+    <string name="red_text">Red</string>
+    <string name="blue_text">Blue</string>
+    <string name="green_text">Green</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+    <string name="num_0">0</string>
+    <string name="vol_text">VOL</string>
+    <string name="ch_text">CH</string>
+    <string name="volume_up_text">Volume Up</string>
+    <string name="power_text">Power</string>
+    <string name="channel_up_text">Channel Up</string>
+    <string name="volume_down_text">Volume Down</string>
+    <string name="mute_text">Mute</string>
+    <string name="channel_down_text">Channel Down</string>
+    <string name="back_text">Back</string>
+    <string name="confirm_text">OK</string>
+    <string name="vol_up_text">VOL+</string>
+    <string name="power_view_text">POWER</string>
+    <string name="back_view_text">BACK</string>
+    <string name="vol_down_text">VOL-</string>
+    <string name="mute_view_text">MUTE</string>
+    <string name="menu_view_text">MENU</string>
+    <string name="flash_on">Camera flash ON!</string>
+    <string name="flash_off">Camera flash OFF!</string>
 </resources>
