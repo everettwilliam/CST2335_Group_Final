@@ -70,7 +70,7 @@ public class HouseSettingsFragments extends BaseActivity {
                 String messageStr = this.getResources().getString(message);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle(R.string.help_dialog_title_house_settings)
-                        .setMessage(Html.fromHtml(messageStr))
+                        .setMessage(Html.fromHtml("<div style='#666666'>" + messageStr + "</div>"))
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
